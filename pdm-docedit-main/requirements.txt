@@ -1,0 +1,7 @@
+docx2txt==0.8
+python-multipart
+fastapi==0.108.0
+docxtpl==0.16.7
+docx==0.2.4
+doc2docx==0.2.4
+uvicorn==0.23.2
