@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          file: Dockerfile
+          file: pdm-docedit-main/Dockerfile
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_NAME }}:staging-${{ env.SHORT_REF }}-${{ github.run_number }}
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_NAME }}:latest
