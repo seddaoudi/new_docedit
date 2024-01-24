@@ -34,7 +34,7 @@ jobs:
           file: pdm-docedit-main/Dockerfile
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_NAME }}:staging-${{ env.SHORT_REF }}-${{ github.run_number }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_NAME }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY_NAME }}:latest1
     outputs:
       repository_name: ${{ env.REPOSITORY_NAME }}
       short_ref: ${{ env.SHORT_REF }}
