@@ -49,14 +49,14 @@ jobs:
         - name: Checkout manifests repository
           uses: actions/checkout@v3
           with:
-            #repository: lagent-x/argocd-applications-manifests
+            repository: https://github.com/seddaoudi/argocd-repo.git
             ref: main
             token: ${{ secrets.PAT }}
         - name: Update Image Tag
           run: |
             git config user.name GitHub Actions
             git config user.email github-actions@techmyteam.com
-            sed -zi 's/image: [a-zA-Z0-9:\/\.\-]*/image: ${{ secrets.DOCKERHUB_USERNAME }}\/${{ needs.build.outputs.repository_name }}:staging-${{ needs.build.outputs.short_ref}}-${{ github.run_number }}/1' parfums-du-monde/staging/pdm-docsedit/deployment.yml
+            sed -zi 's/image: [a-zA-Z0-9:\/\.\-]*/image: ${{ secrets.DOCKERHUB_USERNAME }}\/${{ needs.build.outputs.repository_name }}:staging-${{ needs.build.outputs.short_ref}}-${{ github.run_number }}/1' /deployment.yml
             git add .
             git commit -m "cd: Updated Docker Image Tag for ${{ needs.build.outputs.repository_name }}" -m "Initiated by: ${{ github.ACTOR }}"
             git push
