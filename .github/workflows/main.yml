@@ -49,7 +49,7 @@ jobs:
         - name: Checkout manifests repository
           uses: actions/checkout@v3
           with:
-            repository: https://github.com/seddaoudi/argocd-repo.git
+            repository: seddaoudi/argocd-repo
             ref: main
             token: ${{ secrets.PAT }}
         - name: Update Image Tag
